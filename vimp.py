@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 print('Libraries loaded')
@@ -54,7 +55,16 @@ term_importance = df_tfidf.sum(axis=0)
 # Sort the terms by importance in descending order
 sorted_terms = term_importance.sort_values(ascending=False)
 
-df = pd.DataFrame(sorted_terms)
-df.to_csv('sorted-terms.csv')
+## Plot sorted terms onto a graph
+terms_df = pd.DataFrame(sorted_terms.head(100))
+# Prepare canvas, size in inches (width, height)
+plt.figure(figsize=(20, 16))
+# Create a bar plot with terms in x axis and importance score on y axis
+plt.bar(terms_df.index, terms_df[0], color='pink')
+plt.xlabel('Terms')
+plt.ylabel('Importance Score')
+plt.title('Importance of terms based on TF-IDF')
+plt.xticks(rotation='vertical')
+plt.show()
 
 # print(tfidf_matrix)
