@@ -7,3 +7,7 @@ This Python script sorts terms used in messages on VentScape in descending order
 ## What is TF-IDF?
 
 This Python project utilises Term Frequency-Inverse Document Frequency (TF-IDF), a statistical measure used to evaluate importance of a word in a document relative to a collection of documents (a corpus). It reflects how important a word is to a document. It helps to distinguish between common and unique words.
+
+## What is the source of this data?
+
+The data has been taken from the [ArchiveScape project](https://github.com/LoV432/ArchiveScape).
